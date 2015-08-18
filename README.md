@@ -6,6 +6,9 @@ HackNTU 2015
 
 [DRAW](http://jmlr.org/proceedings/papers/v37/gregor15.pdf)
 
+[產生文字圖](http://coolcd.blogspot.tw/2010/01/imagemagick.html)
+
+
 ## TODO
 - training data
  - 手寫
