@@ -5,6 +5,12 @@ HackNTU 2015
 
 [英文產生手寫字](http://www.cs.toronto.edu/~graves/handwriting.html)
 
+## TODO
+- training data
+ - 手寫
+ - 新細明體
+- 打壁球
+
 ### 標題
 - `code`
 - 條列
