@@ -1,18 +1,18 @@
-# downloads php
-dir=../3000_words
-rm -rf $dir && mkdir $dir
-cd $dir
+#!/bin/bash -e
+cd ../imgs
+police=10
+#font=WenQuanYi-Micro-Hei-Regular     # use convert
+font=type${police}					  # use chinesetools php
+dir=${font}_3000
+rm -rf $dir && mkdir $dir && cd $dir
 
-if [ ! -f appendix_1.php ];then  wget http://lcprichi.hkbu.edu.hk/search/appendix_1.php;fi
-
-# list url
-cat appendix_1.php | grep materials/word | cut -d. -f3 | awk '{ print "http://lcprichi.hkbu.edu.hk" $1}' > tmp
-
-# save gif
-#if [ ! -d $dir ];then mkdir $dir;fi
-
-while read line
+while read -n 1 word 
 do
-	wget $line # wait too long ??
-done < tmp
-rm tmp
+	if [ ! $word == "　" ];then
+		echo $word
+		#convert -font $font -pointsize 24 label:$word ${word}.png
+		#wget http://www.chinesetools.eu/names/gen_boutons.php?text=${word}&amp;s=76&amp;police=${police}&amp;dispo=1   # disposition=1(horizontal), 2(vertical) WGET can't run
+		curl "http://www.chinesetools.eu/names/gen_boutons.php?text=${word}&amp;s=76&amp;police=${police}&amp;dispo=1" -o ${word}.png 2> /dev/null
+	fi
+done < ../../3000_words.list
+
