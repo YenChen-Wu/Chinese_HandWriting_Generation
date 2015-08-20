@@ -8,7 +8,7 @@ HackNTU 2015
 
 [產生文字圖](http://coolcd.blogspot.tw/2010/01/imagemagick.html)
 
-- DEMO SYSTEM USING https://github.com/vdumoulin/morphing_faces
+- DEMO SYSTEM USING http://vdumoulin.github.io/morphing_faces/
 - TRAINING MODEL USING https://github.com/y0ast/Variational-Autoencoder
 
 
