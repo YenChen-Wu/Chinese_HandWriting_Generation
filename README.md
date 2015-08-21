@@ -12,11 +12,22 @@ HackNTU 2015
 - TRAINING MODEL USING https://github.com/y0ast/Variational-Autoencoder
 
 
+## Data Structure
+ - scripts (BASH scripts)
+ - src (python & matlab code)
+ - training_data
+  - 微黑體? 3000字
+  - 4種字型 1918字(有缺字體)
+  - output 處理完成100*100的圖檔
+ - testing
+  - data1
+  - data2
+  - with rotation erosion gnoise
+ - map  使用的3000字與編號
+ - valid_word.list 1918字的編號
+
 ## TODO
-- training data
- - 手寫
- - 新細明體
-- 打壁球
+ 
 
 ### 標題
 - `code`
