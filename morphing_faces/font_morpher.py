@@ -74,8 +74,9 @@ class Morpher(object):
         """
         Maps the point Z in latent space to a 48 x 48 pixels face image
         """
-        h_decoder = numpy.tanh(numpy.dot(self.W4, self.Z) + self.b4)
-        X = numpy.dot(self.W5,h_decoder) + self.b5
+        h_decoder = numpy.tanh(numpy.dot(self.W4, self.Z) + self.b4.T)
+        print h_decoder.shape
+        X = numpy.dot(self.W5,h_decoder.T) + self.b5.T
 
         #A_2 = numpy.dot(self.Z, self.d_W_2) + self.d_b_2
         #H_2 = numpy.where(A_2 > 0.0, A_2, 0.0 * A_2)
@@ -83,7 +84,6 @@ class Morpher(object):
         #H_1 = numpy.where(A_1 > 0.0, A_1, 0.0 * A_1)
         #A_0 = numpy.dot(H_1, self.d_W_0) + self.d_b_0
         X = 1.0 / (1.0 + numpy.exp(-X))
-        print h_decoder.shape
         return X.reshape(self.image_shape)
 
     def infer_Z(self, X):
@@ -98,7 +98,7 @@ class Morpher(object):
         h_encoder = numpy.tanh(numpy.dot(self.W1,X) + self.b1)
         mu_encoder = numpy.dot(self.W2,h_encoder) + self.b2
         log_sigma_encoder = 0.5*(numpy.dot(self.W3,h_encoder) + self.b3)
-        z = mu_encoder + numpy.exp(log_sigma_encoder)*eps
+        Z = mu_encoder + numpy.exp(log_sigma_encoder)*eps
         
         #A_1 = numpy.dot(X, self.e_W_0) + self.e_b_0
         #H_1 = numpy.where(A_1 > 0.0, A_1, 0.0 * A_1)
