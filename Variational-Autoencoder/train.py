@@ -5,9 +5,6 @@ Otto Fabius - <ottofabius@gmail.com>
 
 #License: MIT
 """
-
-"""This script trains an auto-encoder on the MNIST dataset and keeps track of the lowerbound"""
-
 #python trainmnist.py -s mnist.npy
 
 import VariationalAutoencoder
@@ -18,19 +15,18 @@ import gzip, cPickle
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d","--double", help="Train on hidden layer of previously trained AE - specify params", default = False)
-
+parser.add_argument("-s","--source", help="training data")
 args = parser.parse_args()
 
-print "Loading MNIST data"
-#Retrieved from: http://deeplearning.net/data/mnist/mnist.pkl.gz
-
-f = file('test.pkl', 'rb')
-(x_train,x_test) = cPickle.load(f)
+print "Loading data..." + args.source
+f = file(args.source, 'rb')
+(x_train,label_train) = cPickle.load(f)
 f.close()
 
 data = x_train
+x_test = x_train
 
-dimZ = 20
+dimZ = 20	# latent variable ?
 HU_decoder = 400
 HU_encoder = HU_decoder
 
