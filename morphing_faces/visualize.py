@@ -6,7 +6,7 @@ Dependends on:
     * numpy 1.7
     * matplotlib
 """
-from morpher import Morpher
+from font_morpher import Morpher
 from matplotlib import pyplot
 
 
