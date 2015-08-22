@@ -10,6 +10,7 @@ HackNTU 2015
 
 - DEMO SYSTEM USING http://vdumoulin.github.io/morphing_faces/
 - TRAINING MODEL USING https://github.com/y0ast/Variational-Autoencoder
+- CAE https://swarbrickjones.wordpress.com/2015/04/29/convolutional-autoencoders-in-pythontheanolasagne/
 
 
 ## Data Structure
