@@ -8,6 +8,8 @@ HackNTU 2015
 
 [產生文字圖](http://coolcd.blogspot.tw/2010/01/imagemagick.html)
 
+[中文筆劃分析](http://tm.itc.ntnu.edu.tw/CNLP/?q=node/5)
+
 - DEMO SYSTEM USING http://vdumoulin.github.io/morphing_faces/
 - TRAINING MODEL USING https://github.com/y0ast/Variational-Autoencoder
 - CAE https://swarbrickjones.wordpress.com/2015/04/29/convolutional-autoencoders-in-pythontheanolasagne/
